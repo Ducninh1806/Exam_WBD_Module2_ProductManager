@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<h2>Product List</h2>
+
+<form>
+    Search by Title Blog:
+    <input name="s" type="text">
+    <input type="submit" value="Search">
+</form><br>
+
+<p><a href="/create-product">Add new Product</a> </p>
+
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th></th>
+
+    </tr>
+    <th:block th:each="p :${product}">
+        <tr>
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+
+            <td><a th:href="@{/edit-product/__${p.id}__}">Edit</a>|<a th:href="@{/delete-product/__${p.id}__}">Delete</a> </td>
+
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>

@@ -1,5 +1,7 @@
 package com.codegym;
 
+import com.codegym.service.ProductService;
+import com.codegym.service.impl.ProductServiceImpl;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -117,6 +119,9 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         return properties;
     }
 
-
+    @Bean
+    public ProductService productService(){
+        return new ProductServiceImpl();
+    }
 
 }
