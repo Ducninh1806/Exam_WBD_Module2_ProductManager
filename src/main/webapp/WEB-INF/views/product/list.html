@@ -35,5 +35,11 @@
     </th:block>
 </table>
 
+<div>
+    <a th:href="@{'/product'(page=${product.number - 1})}" th:if="${product.hasPrevious()}">Previous</a>
+    <span th:text="${product.number + 1}"></span>/<span th:text="${product.totalPages}"></span>
+    <a th:href="@{'/product'(page=${product.number + 1})}" th:if="${product.hasNext()}">Next</a>
+</div>
+
 </body>
 </html>
