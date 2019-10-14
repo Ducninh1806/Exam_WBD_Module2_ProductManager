@@ -1,6 +1,8 @@
 package com.codegym.controller;
 
+import com.codegym.model.Category;
 import com.codegym.model.Product;
+import com.codegym.service.CategoryService;
 import com.codegym.service.ProductService;
 import com.sun.org.apache.xalan.internal.xslt.Process;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,14 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CategoryService categoryService;
+
+    @ModelAttribute("category")
+    public Iterable<Category> categories(){
+        return categoryService.findAll();
+    }
 
 
     @GetMapping("/")

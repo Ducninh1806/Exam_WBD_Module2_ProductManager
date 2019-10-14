@@ -17,6 +17,14 @@
             <td><input type="text" th:field="*{name}"></td>
         </tr>
         <tr>
+            <td>Category Type:</td>
+            <td>
+                <select th:field="*{category}">
+                    <option th:each="c : ${category}" th:value="${c.id}" th:text="${c.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <td>Price: </td>
             <td><input type="text" th:field="*{price}"></td>
         </tr>

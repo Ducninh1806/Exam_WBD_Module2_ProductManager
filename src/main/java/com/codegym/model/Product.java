@@ -18,6 +18,18 @@ public class Product {
     @Lob
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "category")
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public Product() {
     }
 
