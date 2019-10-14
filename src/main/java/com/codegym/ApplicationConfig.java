@@ -1,6 +1,9 @@
 package com.codegym;
 
+import com.codegym.model.Category;
+import com.codegym.service.CategoryService;
 import com.codegym.service.ProductService;
+import com.codegym.service.impl.CategoryServiceImpl;
 import com.codegym.service.impl.ProductServiceImpl;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.beans.BeansException;
@@ -122,6 +125,11 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     @Bean
     public ProductService productService(){
         return new ProductServiceImpl();
+    }
+
+    @Bean
+    public CategoryService categoryService() {
+        return new CategoryServiceImpl();
     }
 
 }
