@@ -8,10 +8,10 @@
 
 <h3>Create Product</h3>
 
-<p><a href="/product">List Blog</a> </p>
+<p><a href="/product">Product List</a> </p>
 
 <form th:action="@{create-product}" th:object="${product}" method="post">
-    <table>
+    <table border="1">
         <tr>
             <td>Name: </td>
             <td><input type="text" th:field="*{name}"></td>
@@ -29,8 +29,9 @@
             <td><textarea th:rows="12" th:cols="60" type="text" th:field="*{description}"></textarea></td>
         </tr>
         <tr>
-            <td></td>
-            <td><input type="submit" value="Create Blog"></td>
+            <td> </td>
+            <td><input type="submit" value="Create Product"></td>
+
         </tr>
     </table>
 </form>
